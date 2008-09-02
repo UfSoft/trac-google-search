@@ -22,7 +22,7 @@ class AdsenseAdminPanel(Component):
             yield ('google', 'Google', 'search', 'Search')
 
     def render_admin_panel(self, req, cat, page, path_info):
-        add_stylesheet(req, 'adsense4trac/adsense4trac.css')
+        add_stylesheet(req, 'googlesearch/googlesearch.css')
         if page == 'ads':
             return self._render_ads_panel(req, cat, page, path_info)
         elif page == 'search':
