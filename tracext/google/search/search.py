@@ -17,13 +17,13 @@ class AdsenseForSearch(Component):
 
     # ITemplateStreamFilter method
     def filter_stream(self, req, method, filename, stream, data):
-        if not self.config.getbool('adsense', 'google_search_active', True):
+        if not self.config.getbool('google.search', 'google_search_active', True):
             self.log.debug('Google search disabled. Returning regular stream.')
             return stream
 
-        search_form_id = self.config.get('adsense', 'search_form_id', 'search')
-        forid = self.config.get('adsense', 'search_form_forid', None)
-        client_id = self.config.get('adsense', 'search_form_client_id', None)
+        search_form_id = self.config.get('google.search', 'search_form_id', 'search')
+        forid = self.config.get('google.search', 'search_form_forid', None)
+        client_id = self.config.get('google.search', 'search_form_client_id', None)
 
         if not search_form_id:
             self.log.warn('The value of the search form id is empty. Returning '
@@ -41,7 +41,7 @@ class AdsenseForSearch(Component):
         data = dict(
             req = req,
             search_form_id = search_form_id,
-            input_width = self.config.get('adsense',
+            input_width = self.config.get('google.search',
                                           'search_form_text_input_width', 31),
             charset = self.config.get('trac', 'default_charset', 'utf-8'),
             forid = forid,
@@ -56,6 +56,6 @@ class AdsenseForSearch(Component):
 
     def process_request(self, req):
         data = dict(
-            iframe_initial_width = self.config.getint('adsense',
+            iframe_initial_width = self.config.getint('google.search',
                                                       'iframe_initial_width'))
         return 'adsense_search_results.html', data, None
