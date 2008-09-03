@@ -37,7 +37,7 @@ class AdsenseForSearch(Component):
             self.log.warn('The value of "Client ID" for the search form is '
                           'empty. Returning regular template stream')
             return stream
-        tpl = Chrome(self.env).load_template('adsense_search_form.html')
+        tpl = Chrome(self.env).load_template('google_search_form.html')
         data = dict(
             req = req,
             search_form_id = search_form_id,
@@ -58,4 +58,4 @@ class AdsenseForSearch(Component):
         data = dict(
             iframe_initial_width = self.config.getint('google.search',
                                                       'iframe_initial_width'))
-        return 'adsense_search_results.html', data, None
+        return 'google_search_results.html', data, None

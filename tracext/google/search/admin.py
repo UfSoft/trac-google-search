@@ -34,7 +34,7 @@ class AdsenseAdminPanel(Component):
             req.redirect(req.href.admin(cat, page))
 
         self._update_config()
-        return 'adsense_search_admin.html', {'ads_options': self.options}
+        return 'google_search_admin.html', {'ads_options': self.options}
 
     # Internal methods
     def _update_config(self):

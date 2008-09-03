@@ -6,10 +6,10 @@ __author__      = 'Pedro Algarvio'
 __email__       = 'ufs@ufsoft.org'
 __package__     = 'TracGoogleSearch'
 __license__     = 'BSD'
-__url__         = 'http://devnull.ufsoft.org'
+__url__         = 'http://google.ufsoft.org'
 __summary__     = 'Google Adsense Search support for trac'
 
-
+import pkg_resources
 from trac.config import Option, BoolOption, IntOption
 from trac.core import Component, implements
 from trac.env import IEnvironmentSetupParticipant
@@ -18,7 +18,6 @@ from trac.web.chrome import ITemplateProvider
 # ==============================================================================
 # Google Search Config
 # ==============================================================================
-
 class GoogleSearchConfig(Component):
     google_search_active = BoolOption(
         'google.search', 'google_search_active', True,
@@ -58,14 +57,10 @@ class GoogleSearchConfig(Component):
         """
     )
 
-
 # ==============================================================================
-# Adsense4Trac Resources
+# Google Search Resources
 # ==============================================================================
-import pkg_resources
-from trac.web.chrome import ITemplateProvider
-
-class AdsenseResources(Component):
+class GoogleSearchResources(Component):
     implements(ITemplateProvider)
     # ITemplateProvider methods
     def get_htdocs_dirs(self):
