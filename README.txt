@@ -64,7 +64,6 @@ Please submit bugs of new features to::
 
 **Note**: For up-to-date documentation please visit TracGoogleSearch_'s site.
 
-~~~~
 
 .. _trac: http://trac.edgewall.org
 .. _TracGoogleSearch: http://google.ufsoft.org/wiki/TracGoogleSearch
