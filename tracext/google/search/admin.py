@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 # vim: sw=4 ts=4 fenc=utf-8 et
+# ==============================================================================
+# Copyright © 2008 UfSoft.org - Pedro Algarvio <ufs@ufsoft.org>
+#
+# Please view LICENSE for additional licensing information.
+# ==============================================================================
 
-from trac.core import Component, implements
-from trac.web.chrome import add_stylesheet
 from trac.admin import IAdminPanelProvider
 from trac.config import Option, _TRUE_VALUES
+from trac.core import Component, implements
+from trac.web.chrome import add_stylesheet
 
-
-class AdsenseAdminPanel(Component):
+class AdsenseAdmin(Component):
     config = env = log = None # make pylint happy
     implements(IAdminPanelProvider)
 

@@ -1,32 +1,68 @@
-TracAdsPlugin
-=============
+TracGoogleSearch
+================
 
-TracAdsPlugin_ is of course a trac_ plugin designed to display ads on your
-trac_ environment.
+TracGoogleSearch_ is a trac_ plugin which enables your trac_ environment to
+use Google_'s Adsense_ For Search on the mini search box displayed on top.
 
-The main feature of the plugin is that it allows the user to persistently_
-hide the ads, making your trac_ environment less annoying to those who
-dislike ads and supporting open-source projects through them.
 
 Installation
 ------------
 Installing the plugin is as easy as::
 
-  sudo easy_install TracAdsPlugin
+  sudo easy_install TracGoogleSearch
 
 And then enabling it:
 
 .. sourcecode:: ini
 
   [components]
-  adsplugin.* = enabled
+  tracext.google.search.* = enabled
 
 And that's it!
 
-Now, all you have to do is to go to the administration and under **Ads Panel**
-you have a configuration link to setup the plugin.
+Configuration
+-------------
+In order to use this plugin you must first create a custom search engine on
+your Adsense_ account, configure it like you want it and choose to display
+the results on a page on your own website.
 
-**Note**: For up-to-date documentation please visit TracAdsPlugin_'s site.
+From the resulting code that Google_ provides we'll need the values from the
+hidden fields named, **cx** and **cof**, ie, your client id and search id
+strings.
+
+Consider the following example code:
+
+.. sourcecode:: html
+
+  <form action="http://domain.tld/gsearch" id="cse-search-box">
+    <div>
+      <input type="hidden" name="cx" value="partner-pub-0000000000000000:0aaaa0aaa00a" />
+      <input type="hidden" name="cof" value="FORID:1" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input type="text" name="q" size="31" />
+      <input type="submit" name="sa" value="Search" />
+    </div>
+  </form>
+  <script type="text/javascript"
+          src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+
+
+The values you'll need to remember would be
+**partner-pub-0000000000000000:0aaaa0aaa00a** and **FORID:1**, the rest of the
+code will be provided by the plugin.
+
+The plugin can then be configured on trac_'s administration panel, under the
+section **Google** and then **Search**.
+
+Bugs and/or New Features
+------------------------
+
+Please submit bugs of new features to::
+
+  http://google.ufsoft.org/
+
+
+**Note**: For up-to-date documentation please visit TracGoogleSearch_'s site.
 
 ~~~~
 
@@ -35,4 +71,6 @@ you have a configuration link to setup the plugin.
                   choice to display them again*.
 
 .. _trac: http://trac.edgewall.org
-.. _TracAdsPlugin: http://devnull.ufsoft.org/wiki/TracAdsPanel
+.. _TracGoogleSearch: http://google.ufsoft.org/wiki/TracGoogleSearch
+.. _Google: http://www.google.com
+.. _Adsense: https://www.google.com/adsense/

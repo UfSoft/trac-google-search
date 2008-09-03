@@ -17,13 +17,16 @@ class AdsenseForSearch(Component):
 
     # ITemplateStreamFilter method
     def filter_stream(self, req, method, filename, stream, data):
-        if not self.config.getbool('google.search', 'google_search_active', True):
+        if not self.config.getbool('google.search',
+                                   'google_search_active', True):
             self.log.debug('Google search disabled. Returning regular stream.')
             return stream
 
-        search_form_id = self.config.get('google.search', 'search_form_id', 'search')
+        search_form_id = self.config.get('google.search',
+                                         'search_form_id', 'search')
         forid = self.config.get('google.search', 'search_form_forid', None)
-        client_id = self.config.get('google.search', 'search_form_client_id', None)
+        client_id = self.config.get('google.search',
+                                    'search_form_client_id', None)
 
         if not search_form_id:
             self.log.warn('The value of the search form id is empty. Returning '
@@ -37,7 +40,7 @@ class AdsenseForSearch(Component):
             self.log.warn('The value of "Client ID" for the search form is '
                           'empty. Returning regular template stream')
             return stream
-        tpl = Chrome(self.env).load_template('google_search_form.html')
+        template = Chrome(self.env).load_template('google_search_form.html')
         data = dict(
             req = req,
             search_form_id = search_form_id,
@@ -48,7 +51,7 @@ class AdsenseForSearch(Component):
             client_id = client_id
         )
         return stream | Transformer('//div/form[@id="%s"]' % search_form_id) \
-                                    .replace(tpl.generate(**data))
+                                    .replace(template.generate(**data))
 
     # IRequestHandler methods
     def match_request(self, req):
