@@ -62,6 +62,16 @@ Please submit bugs of new features to::
   http://google.ufsoft.org/
 
 
+Source Code
+-----------
+
+If you wish to be on the bleeding edge and get the latest available code:
+
+.. sourcecode:: ini
+
+  hg clone http://google.ufsoft.org/hg/search-dev/ TracGoogleSearch
+
+
 **Note**: For up-to-date documentation please visit TracGoogleSearch_'s site.
 
 

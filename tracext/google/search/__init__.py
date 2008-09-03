@@ -12,7 +12,7 @@ __email__       = 'ufs@ufsoft.org'
 __package__     = 'TracGoogleSearch'
 __license__     = 'BSD'
 __url__         = 'http://google.ufsoft.org'
-__summary__     = 'Google Adsense Search support for trac'
+__summary__     = 'Google Adsense Search Plugin for Trac'
 
 import pkg_resources
 from trac.config import Option, BoolOption, IntOption
