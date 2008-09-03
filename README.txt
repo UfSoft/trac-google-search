@@ -66,10 +66,6 @@ Please submit bugs of new features to::
 
 ~~~~
 
-.. [persistently] *The user choice of hiding the ads will remain untouched
-                  throughout it's later visits, and he'll still have the
-                  choice to display them again*.
-
 .. _trac: http://trac.edgewall.org
 .. _TracGoogleSearch: http://google.ufsoft.org/wiki/TracGoogleSearch
 .. _Google: http://www.google.com
