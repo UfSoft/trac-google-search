@@ -4,6 +4,10 @@ TracGoogleSearch
 TracGoogleSearch_ is a trac_ plugin which enables your trac_ environment to
 use Google_'s Adsense_ For Search on the mini search box displayed on top.
 
+**Note:** Regular trac_ search won't be disabled, the users must click the
+*"Search"* button to access it, and will only show up and work if user has
+``SEARCH_VIEW`` permissions, unlike this plugin, which does not
+require any special permissions since it's querying Google_ not trac_.
 
 Installation
 ------------
@@ -25,6 +29,11 @@ Configuration
 In order to use this plugin you must first create a custom search engine on
 your Adsense_ account, configure it like you want it and choose to display
 the results on a page on your own website.
+
+If you wish Google_ to show results relative to the domain of your trac_
+environment, on your Adsense_ account, edit your search engine settings, choose
+*"view more advanced features"*, select *"Search the entire web but emphasize
+included sites"* and then under *"Sites"* add your trac_ environment domain.
 
 From the resulting code that Google_ provides we'll need the values from the
 hidden fields named, **cx** and **cof**, ie, your client id and search id
@@ -67,7 +76,7 @@ Source Code
 
 If you wish to be on the bleeding edge and get the latest available code:
 
-.. sourcecode:: ini
+.. sourcecode:: sh
 
   hg clone http://google.ufsoft.org/hg/search/ TracGoogleSearch
 
