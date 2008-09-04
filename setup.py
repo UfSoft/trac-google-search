@@ -22,7 +22,6 @@ setup(
     download_url = 'http://python.org/pypi/%s' % tg.__package__,
     long_description = re.sub(r'(\.\.[\s]*[\w]*::[\s]*[\w+]*\n)+', r'::\n',
                               open('README.txt').read()),
-    license = tg.__license__,
     platforms = "OS Independent - Anywhere Python, Trac >=0.11 is known to run.",
     install_requires = ['Trac>=0.11'],
     keywords = "adsense trac",
