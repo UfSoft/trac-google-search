@@ -6,10 +6,10 @@
 # Please view LICENSE for additional licensing information.
 # ==============================================================================
 
-__version__     = '0.1.1'
+__version__     = '0.1.2'
 __author__      = 'Pedro Algarvio'
 __email__       = 'ufs@ufsoft.org'
-__package__     = 'TracGoogleSearch'
+__packagename__ = 'TracGoogleSearch'
 __license__     = 'BSD'
 __url__         = 'http://google.ufsoft.org'
 __summary__     = 'Google Adsense Search Plugin for Trac'
