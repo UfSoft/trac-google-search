@@ -12,7 +12,7 @@ from setuptools import setup, find_packages
 import tracext.google.search as tg
 
 setup(
-    name = tg.__package__,
+    name = tg.__packagename__,
     version = tg.__version__,
     author = tg.__author__,
     author_email = tg.__email__,
