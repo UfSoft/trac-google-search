@@ -6,7 +6,7 @@
 # Please view LICENSE for additional licensing information.
 # ==============================================================================
 
-__version__     = '0.1.2'
+__version__     = '0.1.3'
 __author__      = 'Pedro Algarvio'
 __email__       = 'ufs@ufsoft.org'
 __packagename__ = 'TracGoogleSearch'

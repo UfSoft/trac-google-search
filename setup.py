@@ -27,6 +27,8 @@ setup(
     keywords = "adsense trac",
     packages = ['tracext', 'tracext.google', 'tracext.google.search'],
     namespace_packages = ['tracext', 'tracext.google'],
+    package_data = {'tracext.google.search': ['templates/*.html',
+                                              'htdocs/*.css']},
     classifiers = ['Framework :: Trac'],
     entry_points = """
     [trac.plugins]
